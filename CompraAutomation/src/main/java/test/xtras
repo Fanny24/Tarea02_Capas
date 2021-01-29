@@ -1,0 +1,35 @@
+public ArrayList<String> listEstado() {
+        List<WebElement> tstate = tableList.findElements(By.tagName("tr"));
+        ArrayList<String> obtState = new ArrayList<String>();
+
+        String estado = "";
+        String aux1 = "";
+        int aux2 = 0;
+        int aux3 = 0;
+
+        for (int j = 5; j < tstate.size(); ++j) {  //
+
+            aux1 = tstate.toString();
+            aux2 = aux1.length();
+            aux3 = aux2 - 11;
+            System.out.println(aux2);
+            System.out.println(aux3);
+
+            estado = tstate.get(j).getText().substring(aux3, aux2); //25-37
+            System.out.println(estado);
+            obtState.add(estado);
+        }
+        System.out.println(obtState);
+        return obtState;
+    }
+
+
+    //****
+
+    //  for(String i: pedido, String j: state)
+           //     if (i == st01 && j=="On backorder"){
+          //          System.out.println("Orden pendiente de pago");
+          //      }
+          //  else{
+          //          System.out.println("Orden con estado erróneo");
+          //     }
